@@ -53,8 +53,7 @@
  * 	externalStrokeColor {String} (optional) - External reference circonference color (Default value is '#008000')
  * 	autoReturnToCenter {Bool} (optional) - Sets the behavior of the stick, whether or not, it should return to zero position when released (Default value is True and return to zero)
  */
-var JoyStick = (function(container, parameters, callback)
-{
+var JoyStick = (function(container, parameters, callback) {
 	parameters = parameters || {};
     callback = callback || function (x, y) {}
 	var title = (typeof parameters.title === "undefined" ? "joystick" : parameters.title),
@@ -93,19 +92,12 @@ var JoyStick = (function(container, parameters, callback)
 	var movedX=centerX;
 	var movedY=centerY;
 		
-	// Check if the device support the touch or not
-	if("ontouchstart" in document.documentElement)
-	{
-		canvas.addEventListener("touchstart", onTouchStart, false);
-		canvas.addEventListener("touchmove", onTouchMove, false);
-		canvas.addEventListener("touchend", onTouchEnd, false);
-	}
-	else
-	{
-		canvas.addEventListener("mousedown", onMouseDown, false);
-		canvas.addEventListener("mousemove", onMouseMove, false);
-		canvas.addEventListener("mouseup", onMouseUp, false);
-	}
+    canvas.addEventListener("touchstart", onTouchStart, false);
+    document.addEventListener("touchmove", onTouchMove, false);
+    document.addEventListener("touchend", onTouchEnd, false);
+    canvas.addEventListener("mousedown", onMouseDown, false);
+    document.addEventListener("mousemove", onMouseMove, false);
+    document.addEventListener("mouseup", onMouseUp, false);
 	// Draw the object
 	drawExternal();
 	drawInternal();
