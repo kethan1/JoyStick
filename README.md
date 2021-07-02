@@ -5,7 +5,7 @@
 
 ## About
 
-**Author: [Roberto D'Amico](http://bobboteck.github.io)**
+**Author: Kethan Vegunta**
 
 A simple **JoyStick** for web application that use HTML5, Canvas and JavaScript.
 You can simply add a JoyStick in your HTML5 page, base configuration is ready for use it.

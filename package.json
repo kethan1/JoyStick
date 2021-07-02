@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bobboteck/JoyStick.git"
+    "url": "git+https://github.com/kethan1/JoyStick.git"
   },
   "keywords": [
     "joystick",
@@ -19,7 +19,7 @@
   "author": "Roberto D'Amico (@bobboteck)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bobboteck/JoyStick/issues"
+    "url": "https://github.com/kethan1/JoyStick/issues"
   },
-  "homepage": "https://github.com/bobboteck/JoyStick#readme"
+  "homepage": "https://github.com/kethan1/JoyStick#readme"
 }
