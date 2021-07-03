@@ -61,14 +61,14 @@ var JoyStick = (function(container, parameters, callback) {
 	var objContainer = document.getElementById(container);
 	var canvas = document.createElement("canvas");
 	canvas.id = title;
-	if(width === 0) { width = objContainer.clientWidth; }
-	if(height === 0) { height = objContainer.clientHeight; }
+	if (width === 0) width = objContainer.clientWidth;
+	if (height === 0) height = objContainer.clientHeight;
 	canvas.width = width;
 	canvas.height = height;
 	objContainer.appendChild(canvas);
 	var context = canvas.getContext("2d");
 	
-	var pressed = 0; // Bool - 1=Yes - 0=No
+	var pressed = false;
     var circumference = 2 * Math.PI;
     var internalRadius = (canvas.width-((canvas.width/2)+10))/2;
 	var maxMoveStick = internalRadius + 5;
@@ -114,7 +114,7 @@ var JoyStick = (function(container, parameters, callback) {
 	function drawInternal() {
 		context.beginPath();
 		if (movedX < internalRadius) movedX=maxMoveStick;
-		if ((movedX+internalRadius) > canvas.width) movedX = canvas.width-(maxMoveStick);
+		if ((movedX + internalRadius) > canvas.width) movedX = canvas.width-(maxMoveStick);
 		if (movedY < internalRadius) movedY=maxMoveStick;
 		if ((movedY + internalRadius) > canvas.height) movedY = canvas.height-(maxMoveStick);
 		context.arc(movedX, movedY, internalRadius, 0, circumference, false);
@@ -135,13 +135,13 @@ var JoyStick = (function(container, parameters, callback) {
 	 * @desc Events for manage touch
 	 */
 	function onTouchStart(event) {
-		pressed = 1;
+		pressed = true;
 	}
 
 	function onTouchMove(event) {
 		// Prevent the browser from doing its default thing (scroll, zoom)
 		event.preventDefault();
-		if (pressed === 1 && event.targetTouches[0].target === canvas) {
+		if (pressed && event.targetTouches[0].target === canvas) {
 			movedX = event.targetTouches[0].pageX;
 			movedY = event.targetTouches[0].pageY;
 			// Manage offset
@@ -162,7 +162,7 @@ var JoyStick = (function(container, parameters, callback) {
 	} 
 
 	function onTouchEnd(event) {
-		pressed = 0;
+		pressed = false;
 		// If required reset position store variable
 		if (autoReturnToCenter) {
 			movedX = centerX;
@@ -181,11 +181,11 @@ var JoyStick = (function(container, parameters, callback) {
 	 * @desc Events for manage mouse
 	 */
 	function onMouseDown(event) {
-		pressed = 1;
+		pressed = true;
 	}
 
 	function onMouseMove(event) {
-		if (pressed === 1) {
+		if (pressed) {
 			movedX = event.pageX;
 			movedY = event.pageY;
             callback((100*((movedX - centerX)/maxMoveStick)).toFixed(), (100*((movedY - centerY)/maxMoveStick)).toFixed());
@@ -206,7 +206,7 @@ var JoyStick = (function(container, parameters, callback) {
 	}
 
 	function onMouseUp(event) {
-		pressed = 0;
+		pressed = false;
 		// If required reset position store variable
 		if (autoReturnToCenter) {
 			movedX = centerX;
