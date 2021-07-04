@@ -32,6 +32,17 @@ First add the JS library in your page, follow the example code to use, if necess
 <script src="joy.js"></script>
 ```
 
+If you are using NodeJS, you can use  `import` or `require` to import the library.
+```javascript
+// ES6
+import JoyStick from 'joy.mjs';
+
+// CommonJS
+const JoyStick = require('joy.cjs');
+```
+
+You can also use `joy.min.js`, `joy.min.mjs`, or `joy.min.cjs` (depending on how you are importing the library) to use the minified version of the library. You can install the libary with `npm i html-joystick`, or `yarn add html-joystick`. Then, replace the filename with `./node_modules/html-joystick/<file to import>`
+
 Next define the HTML object that will contain the control, in the following example it shows a ***div***, whose dimensions are defined by in line CSS.
 
 ```html
