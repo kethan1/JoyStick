@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/kethan1/JoyStick#readme",
   "devDependencies": {
-    "eslint": "^7.30.0"
+    "eslint": "^7.30.0",
+    "eslint-config-google": "^0.14.0"
   }
 }

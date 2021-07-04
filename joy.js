@@ -28,7 +28,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-
 class JoyStick {
     #width;
     #height;
@@ -93,12 +92,12 @@ class JoyStick {
         this.#movedX = this.#centerX;
         this.#movedY = this.#centerY;
             
-        this.#canvas.addEventListener("touchstart", (event) => this.onTouchStart(event), {passive: false});
-        document.addEventListener("touchmove", (event) => this.onTouchMove(event), {passive: false});
-        document.addEventListener("touchend", (event) => this.onTouchEnd(event), {passive: false});
-        this.#canvas.addEventListener("mousedown", (event) => this.onMouseDown(event), false);
-        document.addEventListener("mousemove", (event) => this.onMouseMove(event), false);
-        document.addEventListener("mouseup", (event) => this.onMouseUp(event), false);
+        this.#canvas.addEventListener("touchstart", (event) => this.#onTouchStart(event), {passive: false});
+        document.addEventListener("touchmove", (event) => this.#onTouchMove(event), {passive: false});
+        document.addEventListener("touchend", (event) => this.#onTouchEnd(event), {passive: false});
+        this.#canvas.addEventListener("mousedown", (event) => this.#onMouseDown(event), false);
+        document.addEventListener("mousemove", (event) => this.#onMouseMove(event), false);
+        document.addEventListener("mouseup", (event) => this.#onMouseUp(event), false);
         // Draw the object
         this.#drawExternal();
         this.#drawInternal();
@@ -238,11 +237,11 @@ class JoyStick {
 	/**
 	 * @desc Events for managing touch
 	 */
-	onTouchStart(event) {
+	#onTouchStart(event) {
 		this.#pressed = true;
 	}
 
-	onTouchMove(event) {
+	#onTouchMove(event) {
 		// Prevent the browser from doing its default thing (scroll, zoom)
 		event.preventDefault();
 		if (this.#pressed && event.targetTouches[0].target === this.#canvas) {
@@ -265,7 +264,7 @@ class JoyStick {
 		}
 	} 
 
-	onTouchEnd(event) {
+	#onTouchEnd(event) {
 		this.#pressed = false;
 		// If required reset position store variable
 		if (this.#autoReturnToCenter) {
@@ -283,11 +282,11 @@ class JoyStick {
 	/**
 	 * @desc Events for managing mouse
 	 */
-	onMouseDown(event) {
+	#onMouseDown(event) {
 		this.#pressed = true;
 	}
 
-	onMouseMove(event) {
+	#onMouseMove(event) {
 		if (this.#pressed) {
 			this.#movedX = event.pageX;
 			this.#movedY = event.pageY;
@@ -308,7 +307,7 @@ class JoyStick {
 		}
 	}
 
-	onMouseUp(event) {
+	#onMouseUp(event) {
 		this.#pressed = false;
 		// If required reset position store variable
 		if (this.#autoReturnToCenter) {
