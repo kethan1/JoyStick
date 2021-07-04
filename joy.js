@@ -100,8 +100,8 @@ class JoyStick {
         document.addEventListener("mousemove", (event) => this.onMouseMove(event), false);
         document.addEventListener("mouseup", (event) => this.onMouseUp(event), false);
         // Draw the object
-        this.drawExternal();
-        this.drawInternal();
+        this.#drawExternal();
+        this.#drawInternal();
     }
 
 	// Public methods
@@ -143,7 +143,7 @@ class JoyStick {
 	 * @return Integer from -100 to +100
 	 */
 	GetX() {
-		return (100*((this.#movedX - this.#centerX) / this.#maxMoveStick)).toFixed();
+		return (100 * ((this.#movedX - this.#centerX) / this.#maxMoveStick)).toFixed();
 	};
 
 	/**
@@ -151,7 +151,7 @@ class JoyStick {
 	 * @return Integer from -100 to +100
 	 */
 	GetY() {
-		return ((100*((this.#movedY - this.#centerY) / this.#maxMoveStick)) * -1).toFixed();
+		return ((100 * ((this.#movedY - this.#centerY) / this.#maxMoveStick)) * -1).toFixed();
 	};
 	
 	/**
@@ -163,19 +163,31 @@ class JoyStick {
 		var orizontal = this.#movedX - this.#centerX;
 		var vertical = this.#movedY - this.#centerY;
 		
-		if (vertical >= this.#directionVerticalLimitNeg && 
-               vertical <= this.#directionVerticalLimitPos) result = "C";
-		else if (vertical < this.#directionVerticalLimitNeg) result = "N";
-		else if (vertical > this.#directionVerticalLimitPos) result = "S";
+		if (vertical >= this.#directionVerticalLimitNeg && vertical <= this.#directionVerticalLimitPos) {
+            result = "C";
+        }
+               
+		else if (vertical < this.#directionVerticalLimitNeg) {
+            result = "N";
+        }
+		else if (vertical > this.#directionVerticalLimitPos) {
+            result = "S";
+        }
 		
 		if (orizontal < this.#directionHorizontalLimitNeg) {
-			if (result === "C") result = "W";
-			else result += "W";
+			if (result === "C") {
+                result = "W";
+            } else {
+                result += "W";
+            }
 		} else if (orizontal > this.#directionHorizontalLimitPos)	{
-			if (result === "C") result = "E";
-			else result += "E";
+			if (result === "C") {
+                result = "E";
+            } else {
+                result += "E";
+            }
 		}
-		
+
 		return result;
 	}
 
@@ -184,7 +196,7 @@ class JoyStick {
     /*
 	 * @desc Draw the external circle used as reference position
 	 */
-	drawExternal() {
+	#drawExternal() {
 		this.#context.beginPath();
 		this.#context.arc(this.#centerX, this.#centerY, this.#externalRadius, 0, this.#circumference, false);
 		this.#context.lineWidth = this.#externalLineWidth;
@@ -195,12 +207,20 @@ class JoyStick {
 	/**
 	 * @desc Draw the internal stick in the current position the user have moved it
 	 */
-	drawInternal() {
+	#drawInternal() {
 		this.#context.beginPath();
-		if (this.#movedX < this.#internalRadius) this.#movedX = this.#maxMoveStick;
-		if ((this.#movedX + this.#internalRadius) > this.#canvas.width) this.#movedX = this.#canvas.width - (this.#maxMoveStick);
-		if (this.#movedY < this.#internalRadius) this.#movedY = this.#maxMoveStick;
-		if ((this.#movedY + this.#internalRadius) > this.#canvas.height) this.#movedY = this.#canvas.height - (this.#maxMoveStick);
+		if (this.#movedX < this.#internalRadius) {
+            this.#movedX = this.#maxMoveStick;
+        }
+		if ((this.#movedX + this.#internalRadius) > this.#canvas.width) {
+            this.#movedX = this.#canvas.width - (this.#maxMoveStick);
+        }
+		if (this.#movedY < this.#internalRadius) {
+            this.#movedY = this.#maxMoveStick;
+        }
+		if ((this.#movedY + this.#internalRadius) > this.#canvas.height) {
+            this.#movedY = this.#canvas.height - (this.#maxMoveStick);
+        }
 		this.#context.arc(this.#movedX, this.#movedY, this.#internalRadius, 0, this.#circumference, false);
 		// create radial gradient
 		var grd = this.#context.createRadialGradient(this.#centerX, this.#centerY, 5, this.#centerX, this.#centerY, 200);
@@ -216,7 +236,7 @@ class JoyStick {
 	}
 	
 	/**
-	 * @desc Events for manage touch
+	 * @desc Events for managing touch
 	 */
 	onTouchStart(event) {
 		this.#pressed = true;
@@ -240,8 +260,8 @@ class JoyStick {
 			// Delete canvas
 			this.#context.clearRect(0, 0, this.#canvas.width, this.#canvas.height);
 			// Redraw object
-			this.drawExternal();
-			this.drawInternal();
+			this.#drawExternal();
+			this.#drawInternal();
 		}
 	} 
 
@@ -256,12 +276,12 @@ class JoyStick {
 		// Delete canvas
 		this.#context.clearRect(0, 0, this.#canvas.width, this.#canvas.height);
 		// Redraw object
-		this.drawExternal();
-		this.drawInternal();
+		this.#drawExternal();
+		this.#drawInternal();
 	}
 
 	/**
-	 * @desc Events for manage mouse
+	 * @desc Events for managing mouse
 	 */
 	onMouseDown(event) {
 		this.#pressed = true;
@@ -283,8 +303,8 @@ class JoyStick {
 			// Delete canvas
 			this.#context.clearRect(0, 0, this.#canvas.width, this.#canvas.height);
 			// Redraw object
-			this.drawExternal();
-			this.drawInternal();
+			this.#drawExternal();
+			this.#drawInternal();
 		}
 	}
 
@@ -299,7 +319,7 @@ class JoyStick {
 		// Delete canvas
 		this.#context.clearRect(0, 0, this.#canvas.width, this.#canvas.height);
 		// Redraw object
-		this.drawExternal();
-		this.drawInternal();
+		this.#drawExternal();
+		this.#drawInternal();
 	}
 }

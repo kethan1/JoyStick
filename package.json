@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/kethan1/JoyStick/issues"
   },
-  "homepage": "https://github.com/kethan1/JoyStick#readme"
+  "homepage": "https://github.com/kethan1/JoyStick#readme",
+  "devDependencies": {
+    "eslint": "^7.30.0"
+  }
 }
