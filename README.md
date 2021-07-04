@@ -1,7 +1,6 @@
 # JoyStick
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a8b6ea1475c54ae9896e849e356dfe1d)](https://www.codacy.com/app/bobboteck/JoyStick?utm_source=github.com&utm_medium=referral&utm_content=bobboteck/JoyStick&utm_campaign=badger) ![VanillaJS](https://img.shields.io/badge/Vanilla-JS-yellow "VanillaJS") ![GitHub release (latest by date)](https://img.shields.io/github/v/release/bobboteck/joystick) ![GitHub file size in bytes](https://img.shields.io/github/size/bobboteck/joystick/joy.min.js)
-[![GitHub stars](https://img.shields.io/github/stars/bobboteck/JoyStick)](https://github.com/bobboteck/JoyStick/stargazers) [![GitHub forks](https://img.shields.io/github/forks/bobboteck/JoyStick)](https://github.com/bobboteck/JoyStick/network) ![GitHub All Releases](https://img.shields.io/github/downloads/bobboteck/joystick/total) ![npm](https://img.shields.io/npm/v/html5-joystick) ![npm](https://img.shields.io/npm/dw/html5-joystick)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/4f7ed582a7ec4930bca17ed2316fb679)](https://www.codacy.com/gh/kethan1/JoyStick/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=kethan1/JoyStick&amp;utm_campaign=Badge_Grade) ![GitHub release (latest by date)](https://img.shields.io/github/v/release/kethan1/joystick) ![GitHub file size in bytes](https://img.shields.io/github/size/kethan1/joystick/joy.min.js) ![npm](https://img.shields.io/npm/dw/html-joystick)
 
 ## About
 
