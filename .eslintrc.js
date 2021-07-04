@@ -12,5 +12,8 @@ module.exports = {
     'sourceType': 'module',
   },
   'rules': {
+    // windows linebreaks when not in production environment
+    'linebreak-style': 'off',
+    'indent': 'off',
   },
 };

@@ -5,14 +5,13 @@
 
 ## About
 
-**Author: Kethan Vegunta**
+**This is a fork of https://github.com/bobboteck/Joystick by [Roberto D' Amico](https://bobboteck.github.io). This fork aims to be maintained.**
 
-**Author of Repo that this Repo was Forked From: [Roberto D'Amico](http://bobboteck.github.io)**
+**Author: Kethan Vegunta**
 
 A simple **JoyStick** for web application that use HTML5, Canvas and JavaScript.
 You can simply add a JoyStick in your HTML5 page, base configuration is ready for use it.
 The joystick can be used either on touch devices, or on devices that use mouse, touchpads or similar pointing systems.
-Developed for Web Remote Control of Robot, the JoyStick can be used for all other scope.
 
 This project does not use any external Javascript dependencies.
 
