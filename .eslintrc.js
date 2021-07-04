@@ -15,5 +15,6 @@ module.exports = {
     // windows linebreaks when not in production environment
     'linebreak-style': 'off',
     'indent': 'off',
+    'allowAwaitOutsideFunction': true,
   },
 };

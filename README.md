@@ -95,4 +95,4 @@ If you want, open an issue with some information about the project.
 
 ## Contribute
 
-To report a bug or request new features, you can open an issue at https://github.com/kethan1/JoyStick/issues. Pull requests are welcome. Once you've made your changes in `joy.js`, paste the contents of `joy.js` into https://www.digitalocean.com/community/tools/minify, and paste the output into `joy.min.js` (keep the comment at the top of the file though). Then run `npm run generate` to generate the files for the other module types (es6 and commonjs). Then, create a pull request!
+To report a bug or request new features, you can open an issue at https://github.com/kethan1/JoyStick/issues. Pull requests are welcome. Once you've made your changes in `joy.js`, run `npm run generate` to generate the minified file and the files for the other module types (es6 and commonjs). Then, create a pull request!

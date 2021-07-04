@@ -5,7 +5,7 @@
   "main": "joy.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate": "node create_other_module_types.js"
+    "generate": "node generate_other_files.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +26,8 @@
   "devDependencies": {
     "eslint": "^7.30.0",
     "eslint-config-google": "^0.14.0"
+  },
+  "dependencies": {
+    "terser": "^5.7.1"
   }
 }
