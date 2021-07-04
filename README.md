@@ -6,7 +6,7 @@
 ## About
 
 **Author: Kethan Vegunta**
-**Author of Repo that this Repo was Forked From: Kethan Vegunta**
+**Author of Repo that this Repo was Forked From: [Roberto D'Amico](http://bobboteck.github.io)**
 
 A simple **JoyStick** for web application that use HTML5, Canvas and JavaScript.
 You can simply add a JoyStick in your HTML5 page, base configuration is ready for use it.
