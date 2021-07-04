@@ -70,40 +70,40 @@
 	</head>
 	<body>
 		<!-- Example of FIXED or ABSOLUTE position -->
-		<div id="joy3Div" style="width:200px;height:200px;margin:50px;position:fixed;bottom:30px;left:500px;"></div>
-		<div style="position:fixed;bottom:125px;left:750px;">
-			Position X:<input id="joy3PositionX" type="text" value="100" /><br />
-			Position Y:<input id="joy3PositionY" type="text" value="100" /><br />
-			Direction:<input id="joy3Direction" type="text" value="C" /><br />
-			X :<input id="joy3X" type="text" value="0" /></br>
-			Y :<input id="joy3Y" type="text" value="0" />
+		<div id="joy3Div" style="width: 200px; height: 200px; margin: 50px; position: fixed; bottom: 30px; left: 350px;"></div>
+		<div style="position: fixed; bottom: 125px; left: 600px;">
+			Position X:<input id="joy3PositionX" type="text" /><br />
+			Position Y:<input id="joy3PositionY" type="text" /><br />
+			Direction:<input id="joy3Direction" type="text" /><br />
+			X :<input id="joy3X" type="text" /></br>
+			Y :<input id="joy3Y" type="text" />
 		</div>
 		<!-- Example of two JoyStick integrated in the page structure -->
 		<div class="row">
 			<div class="columnLateral">
-				<div id="joy1Div" style="width:200px;height:200px;margin:50px" value="100"></div>
-				Position X:<input id="joy1PositionX" type="text" value="100" /><br />
-				Position Y:<input id="joy1PositionY" type="text" value="100" /><br />
-				Direction:<input id="joy1Direction" type="text" value="C" /><br />
-				X :<input id="joy1X" type="text" value="0" /></br>
-				Y :<input id="joy1Y" type="text" value="0" />
+				<div id="joy1Div" style="width: 200px; height: 200px; margin: 50px;"></div>
+				Position X:<input id="joy1PositionX" type="text" /><br>
+				Position Y:<input id="joy1PositionY" type="text" /><br>
+				Direction:<input id="joy1Direction" type="text" /><br>
+				X:<input id="joy1X" type="text" /></br>
+				Y:<input id="joy1Y" type="text" />
 			</div>
 			<div class="columnCetral">
 				<h2>JoyStick</h2>
 				<p>
-A simple JoyStick that use HTML5, Canvas and JavaScript, for touch and mouse interfaces (no JQuery required).<br /><br />
-The project is available at <a href="https://github.com/bobboteck/JoyStick">https://github.com/bobboteck/JoyStick</a>.<br /><br />
+A simple JoyStick that use HTML5, Canvas and JavaScript, for touch and mouse interfaces (no external Javascript libraries required).<br /><br />
+The project is available at <a href="https://github.com/kethan1/JoyStick">https://github.com/kethan1/JoyStick</a>.<br /><br />
 The left JoyStick (in red square) is an example that use default parametrs, the right JoyStick (in blue square) instead use same custom parameters, specifically the title and the autoReturnToCenter disabled, this also uses CSS class instead inline style.<br /><br />
 <b>NOTE:</b> currently the JoyStick does not work correctly if inserted in a Table tag, to put more than one JoyStick on a single line it is recommended to create a structure with the Div, as in this example page.
 				</p>
 			</div>
 			<div class="columnLateral">
 				<div id="joy2Div"></div>
-				Position X:<input id="joy2PositionX" type="text" value="100" /></br>
-				Position Y:<input id="joy2PositionY" type="text" value="100" /></br>
-				Direction:<input id="joy2Direction" type="text" value="C" /></br>
-				X :<input id="joy2X" type="text" value="0" /></br>
-				Y :<input id="joy2Y" type="text" value="0" />
+				Position X:<input id="joy2PositionX" type="text" /></br>
+				Position Y:<input id="joy2PositionY" type="text" /></br>
+				Direction:<input id="joy2Direction" type="text" /></br>
+				X :<input id="joy2X" type="text" /></br>
+				Y :<input id="joy2Y" type="text" />
 			</div>			
 		</div>
 		<script type="text/javascript">
@@ -122,6 +122,8 @@ The left JoyStick (in red square) is an example that use default parametrs, the 
                 joy1Y.value = y;
             });
 
+            Joy1.callback(0, 0);
+
             var joy2IinputPosX = document.getElementById("joy2PositionX");
             var joy2InputPosY = document.getElementById("joy2PositionY");
             var joy2Direction = document.getElementById("joy2Direction");
@@ -138,6 +140,8 @@ The left JoyStick (in red square) is an example that use default parametrs, the 
                 joy2Y.value = y;
             });
 
+            Joy2.callback(0, 0);
+
             var joy3IinputPosX = document.getElementById("joy3PositionX");
             var joy3InputPosY = document.getElementById("joy3PositionY");
             var joy3Direction = document.getElementById("joy3Direction");
@@ -153,6 +157,8 @@ The left JoyStick (in red square) is an example that use default parametrs, the 
                 joy3X.value = x;
                 joy3Y.value = y;
             });
+
+            Joy3.callback(0, 0);
 		</script>
 	</body>
 </html>
