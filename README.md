@@ -95,4 +95,4 @@ If you want, open an issue with some information about the project.
 
 ## Contribute
 
-To report a bug or request new features, you can open an issue at https://github.com/kethan1/JoyStick/issues. Pull requests are welcome. Once you've made your changes, run `npm run generate` to generate the minified file and the files for the other module types (es6 and commonjs). Then, create a pull request!
+To report a bug or request new features, you can open an issue at https://github.com/kethan1/JoyStick/issues. Pull requests are welcome. Once you've made your changes, run `npm run generate` (this step is optional if you didn't modify the `joy.js` file) to generate the minified file and the files for the other module types (es6 and commonjs). Then, create a pull request!
