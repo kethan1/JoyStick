@@ -1,6 +1,7 @@
 /*
 Name          : joy.js
-@author       : Roberto D'Amico (Bobboteck)
+@author       : Kethan Vegunta (kethan1)
+@original_author       : Roberto D'Amico (Bobboteck)
 
 The MIT License (MIT)
 
