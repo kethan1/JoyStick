@@ -31,7 +31,7 @@ First add the JS library in your page, follow the example code to use, if necess
 <script src="joy.js"></script>
 ```
 
-If you are using NodeJS, you can use  `import` or `require` to import the library.
+You can also use `import` or `require` to import the library.
 ```javascript
 // ES6
 import JoyStick from 'joy.mjs';
